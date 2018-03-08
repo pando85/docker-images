@@ -1,0 +1,19 @@
+#!groovy
+
+node('arch') {
+
+    stage('Checkout'){
+        checkout scm
+    }
+
+    dir('manjaro') {
+
+	    stage('Build image'){
+	        sh 'mkimage.sh'
+	    }
+
+        stage('Push image'){
+            sh 'echo WIP'
+        }
+    }
+}
